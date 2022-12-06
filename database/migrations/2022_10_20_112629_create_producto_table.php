@@ -21,7 +21,9 @@ class CreateProductoTable extends Migration
             $table->string('imagen')->nullable();
             $table->text('descripcion')->nullable();
             $table->double('precio',8,2)->nullable();
-            //$table->char('estado_registro')->default('A');
+            $table->char('estado_registro')->default('A');
+            $table->integer('publicado')->default(0);
+            $table->foreignId('categoria_id')->nullable()->references('id')->on('categoria');
             $table->timestamps();
         });
     }

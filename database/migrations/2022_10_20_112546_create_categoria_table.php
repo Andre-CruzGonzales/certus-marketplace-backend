@@ -18,7 +18,8 @@ class CreateCategoriaTable extends Migration
             $table->string('nombre');
             $table->foreignId('subcategoria_id')->nullable()->references('id')->on('categoria')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('user_id')->nullable()->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->char('estado_registroa')->default('A');
+            $table->char('estado_registro')->default('A');
+            $table->string('url_imagen')->nullable();
             $table->timestamps();
         });
     }
