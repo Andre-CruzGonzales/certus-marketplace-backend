@@ -31,7 +31,8 @@ use Illuminate\Support\Facades\Route;
        Route::get('products/get/{id}','ProductoController@getID');
        Route::put('products/publicar/{id}','ProductoController@publicar');
        Route::get('products/get_publicados','ProductoController@getPublicados');
-
+    //venta
+    Route::post('venta/create','VentaController@create');
 Route::group(['middleware' => ['jwt.verify','cors']], function() {
        /*AÑADE AQUI LAS RUTAS QUE QUIERAS PROTEGER CON JWT*/
 
